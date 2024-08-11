@@ -1,24 +1,26 @@
+// Submitted 2024.8.10
+// O(N)
+
 package main
 
 import (
 	"strconv"
 )
 
-func reverse(s string) string {
-	length := len(s)
-	reversedChars := make([]byte, length)
-
-	for i := 0; i < length; i++ {
-		reversedChars[length-i-1] = s[i]
+func isPalindrome(x int) bool {
+	if x < 0 {
+		return false
 	}
 
-	return string(reversedChars)
-}
-
-func isPalindrome(x int) bool {
 	asString := strconv.Itoa(x)
-	strReversed := reverse(asString)
-	return asString == strReversed
+	length := len(asString)
+	for i := 0; i < length/2; i++ {
+		if asString[i] != asString[length-i-1] {
+			return false
+		}
+	}
+
+	return true
 }
 
 func main() {
