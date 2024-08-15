@@ -8,7 +8,8 @@ class Solution:
             
 
 def main():
-    for i in range(4):
-        print(i)
     solution = Solution()
-    print(solution.isPerfectSquare(256))
+    solution.reverseString(["a", "b", "c", "d"])
+
+if __name__=="__main__":
+    main()
